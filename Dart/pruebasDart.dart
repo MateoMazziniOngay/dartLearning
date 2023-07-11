@@ -73,5 +73,69 @@ void main() {
   // la lista:
   List<int> numerosInt = [1, 2, 3, 4, 5];
 
-  //  MAP  EP-6
+  //  MAP
+
+  // Definición de un MAP, se los conoce como diccionarios de datos.
+  // Los Map son pares de valores, el primer valor es la llave y el segundo es el valor.
+  Map persona = {
+    'nombre': 'Mateo',
+    'edad': 23,
+    'soltero': false
+  }
+  // Es posible definir los tipos de datos que va a tener el Map
+  Map<String, dynamic> persona2 = {
+    'nombre': 'Mateo',
+    'edad': 23,
+    'soltero': false
+  }
+  // También puede tener como valor una lista u otro mapa, etc
+  // Para llamar al nombre, no se hace como en los objetos que se pone 'persona.nombre'
+  // dado que al poner el . se llama a los atributos de Map.
+  // En cambio se llama asi: persona['nombre'];
+  
+  // Para añadir elementos al Map
+  persona2.addAll({'trabajo': false});
+
+
 }
+
+  //  FUNCIONES
+
+  // void main() es una funcion, pero las funciones se definen fuera del main y se llaman dentro de tal.
+  // void se utiliza antes de la definición de la función para decir que ésta no devuelve nada.
+  void saludar() {
+    print('Hola');
+  }
+  // Luego es posible llamar a la funcion en el main
+  saludar();
+
+  // Tambien se puede definir funciones que deban devolver valores, estas deben contener un 'return', 
+  // seguido por un valor del tipo definido al principio de la funcion.
+  String saludar() {
+    return 'Hola';
+  }
+
+  // Otra posibilidad es pasar parametros a la funcion
+  String saludarPersona(saludo, nombre) {
+    return '$saludo $nombre';
+  }
+  // Luego en el main se introducen los valores en el parentesis
+  saludarPersona('Hola ', 'Mateo');
+  // Se puede especificar el tipo de valor de los parametros a ingresar en las funciones
+  String saludarPersona2(String saludo, String nombre) {
+    return '$saludo $nombre';
+  }
+  // Otra posibilidad que brinda Dart es darle nombre a los parametros de las funciones, en vez de solo
+  // aparecer el tipo de dato a ser ingresado. Esto se logra a traves de encerrar los parametros entre {}.
+  String saludarPersona3({ String saludo, String nombre }) {
+    return '$saludo $nombre';
+  }
+  // Al hacer esto, pasa a ser necesario al momento de llamar la funcion e ingresar los valores, 
+  // poner el nombre del valor antes de escribirlo, de esta forma se asigna el dato al valor, 
+  // y no importa el orden en que se ingresen.
+  saludarPersona3(nombre: 'Mateo', saludo: 'Hola, ');
+
+  // En dart existen las arrow functions, donde luego de la flecha va lo que iria luego del return.
+  String saludarPersona3({ String saludo, String nombre }) => '$saludo $nombre';
+  
+
